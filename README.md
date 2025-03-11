@@ -1,0 +1,2 @@
+# Chimmichurri-bot
+Discord BOT
