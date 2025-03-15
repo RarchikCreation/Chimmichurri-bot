@@ -1,0 +1,11 @@
+{
+    "channel_update_title": "Изменение канала",
+    "user_field": "Пользователь",
+    "user_id_field": "ID пользователя",
+    "user_roles_field": "Роли пользователя",
+    "channel_field": "Канал",
+    "channel_id_field": "ID канала",
+    "changes_field": "Изменения",
+    "no_roles": "Нет ролей",
+    "other_changes": "Другие изменения"
+}

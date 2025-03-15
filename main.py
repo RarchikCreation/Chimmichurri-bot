@@ -16,6 +16,7 @@ intents = disnake.Intents(
 
 bot = commands.InteractionBot(intents=intents)
 
+
 @bot.event
 async def on_ready():
     print(f"{bot.user}")
