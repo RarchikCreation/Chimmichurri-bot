@@ -22,7 +22,6 @@ class ChannelUpdateCog(commands.Cog):
         entry = audit_logs[0]
         user = entry.user
 
-        # Получаем актуальные языковые данные
         lang_data = get_lang_data()
 
         embed = disnake.Embed(title=lang_data.get("channel_update", "Изменение канала"), color=disnake.Color.blue())
