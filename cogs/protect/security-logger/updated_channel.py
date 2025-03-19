@@ -1,7 +1,7 @@
 import disnake
 from disnake.ext import commands
 
-from languages.logic.attribute import lang_data
+from languages.logic.attribute import get_lang_data
 
 
 class ChannelUpdateCog(commands.Cog):
@@ -22,17 +22,18 @@ class ChannelUpdateCog(commands.Cog):
         entry = audit_logs[0]
         user = entry.user
 
+        # Получаем актуальные языковые данные
+        lang_data = get_lang_data()
+
         embed = disnake.Embed(title=lang_data.get("channel_update", "Изменение канала"), color=disnake.Color.blue())
         embed.set_thumbnail(url=user.display_avatar.url if user else None)
-        embed.add_field(name=lang_data.get("user", "Пользователь"), value=f"{user.mention}\n{user.display_name}",  inline=True)
+        embed.add_field(name=lang_data.get("user", "Пользователь"), value=f"{user.mention}\n{user.display_name}", inline=True)
         embed.add_field(name=lang_data.get("user_id", "ID пользователя"), value=f"{user.id}", inline=True)
-        embed.add_field(name=lang_data.get("roles", "Роли пользователя"), value=", ".join([role.mention for role in user.roles if role.name != "@everyone"]) or lang_data.get("no_roles", "Нет ролей"),inline=False)
+        embed.add_field(name=lang_data.get("roles", "Роли пользователя"), value=", ".join([role.mention for role in user.roles if role.name != "@everyone"]) or lang_data.get("no_roles", "Нет ролей"), inline=False)
         embed.add_field(name=lang_data.get("channel", "Канал"), value=f"{after.mention}\n{after.name}", inline=True)
         embed.add_field(name=lang_data.get("channel_id", "ID канала"), value=f"{after.id}", inline=True)
-        embed.add_field(name=lang_data.get("changes", "Изменения"), value=f"{before.name} → {after.name}" if before.name != after.name else lang_data.get( "other_changes", "Другие изменения"),
-                        inline=False)
+        embed.add_field(name=lang_data.get("changes", "Изменения"), value=f"{before.name} → {after.name}" if before.name != after.name else lang_data.get("other_changes", "Другие изменения"), inline=False)
         await log_channel.send(embed=embed)
-
 
 def setup(bot):
     bot.add_cog(ChannelUpdateCog(bot))

@@ -22,7 +22,6 @@ def load_language(lang: str):
     except FileNotFoundError:
         return {}
 
-@lru_cache(maxsize=1)
 def get_current_language():
     if os.path.exists(GLOBAL_LANG_FILE):
         with open(GLOBAL_LANG_FILE, "r", encoding="utf-8") as f:
