@@ -1,0 +1,11 @@
+{
+    "channel_update": "Channel Update",
+    "user": "User",
+    "user_id": "User ID",
+    "user_roles": "User Roles",
+    "channel": "Channel",
+    "channel_id": "Channel ID",
+    "changes": "Changes",
+    "no_roles": "No roles",
+    "other_changes": "Other changes"
+}
