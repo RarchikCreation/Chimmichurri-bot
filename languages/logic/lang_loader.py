@@ -1,6 +1,5 @@
 import json
 import os
-from functools import lru_cache
 
 GLOBAL_LANG_FILE = "global_language.json"
 
