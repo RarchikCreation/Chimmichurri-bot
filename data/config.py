@@ -15,6 +15,6 @@ if trust_role_id_str is not None:
     try:
         TRUST_ROLE_ID = int(trust_role_id_str)
     except ValueError:
-        raise ValueError("TRUSTED_ROLE_ID должен быть числом (например: 1234567890)")
+        raise ValueError("TRUSTED_ROLE_ID должен быть числом")
 
 GLOBAL_LANG_FILE = "data/global_language.json"
