@@ -1,10 +1,8 @@
 import disnake
 from disnake.ext import commands
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
-TOKEN = os.getenv("TOKEN")
+from data.config import TOKEN
 
 intents = disnake.Intents(
     guilds=True,
