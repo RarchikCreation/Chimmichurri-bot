@@ -1,7 +1,7 @@
 import json
 import os
 
-GLOBAL_LANG_FILE = "global_language.json"
+from data.config import GLOBAL_LANG_FILE
 
 def load_global_language():
     if os.path.exists(GLOBAL_LANG_FILE):
