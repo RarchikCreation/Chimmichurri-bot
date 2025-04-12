@@ -1,8 +1,8 @@
 import disnake
 from disnake.ext import commands
 import os
-
-from data.config import TRUST_ROLE_ID
+from languages.logic.attribute import get_lang_data
+from utils.role_check_util import check_trust_access
 
 class CogReload(commands.Cog):
     def __init__(self, bot):
@@ -10,11 +10,12 @@ class CogReload(commands.Cog):
 
     @commands.slash_command(name="reload_cogs", description="Перезагружает все коги бота")
     async def reload_cogs(self, inter: disnake.ApplicationCommandInteraction):
-        if not any(role.id == TRUST_ROLE_ID for role in inter.author.roles):
-            await inter.response.send_message("У вас нет доступа к этой команде.", ephemeral=True)
+        if not await check_trust_access(inter):
             return
 
         await inter.response.defer(ephemeral=True)
+
+        lang_data = get_lang_data().get("cogs_control", {})
 
         success = []
         failed = []
@@ -38,14 +39,16 @@ class CogReload(commands.Cog):
                     except Exception as e:
                         failed.append(f"{cog}: {str(e)}")
 
-        message = "**Результат перезагрузки когов:**\n"
+        message = lang_data.get("reload_result")
+
         if success:
-            message += f"Успешно загружено: {len(success)}\n"
+            message += lang_data.get("success_loaded").format(count=len(success))
         if failed:
-            message += f"Ошибки при загрузке: {len(failed)}\n"
+            message += lang_data.get("failed_loaded").format(count=len(failed))
             message += "\n".join(f"• {error}" for error in failed)
 
         await inter.followup.send(message, ephemeral=True)
+
 
 def setup(bot):
     bot.add_cog(CogReload(bot))

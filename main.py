@@ -3,6 +3,7 @@ from disnake.ext import commands
 import os
 
 from data.config import TOKEN
+from utils.logger_util import logger
 
 intents = disnake.Intents(
     guilds=True,
@@ -14,10 +15,9 @@ intents = disnake.Intents(
 
 bot = commands.InteractionBot(intents=intents)
 
-
 @bot.event
 async def on_ready():
-    print(f"{bot.user}")
+    logger(f"###################### {bot.user} ######################")
 
 def load_cogs():
     for root, _, files in os.walk("cogs"):
@@ -27,9 +27,9 @@ def load_cogs():
                 if cog not in bot.extensions:
                     try:
                         bot.load_extension(cog)
-                        print(f"{cog} has been loaded")
+                        logger(f"{cog} has been loaded")
                     except Exception as e:
-                        print(f"Error loading cog {cog}: {e}")
+                        logger(f"Error loading cog {cog}: {e}")
 
 if __name__ == "__main__":
     load_cogs()
