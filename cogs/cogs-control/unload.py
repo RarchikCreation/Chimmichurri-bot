@@ -1,26 +1,29 @@
 import disnake
 from disnake.ext import commands
-from data.config import TRUST_ROLE_ID
+
+from languages.logic.attribute import get_lang_data
+from utils.role_check_util import check_trust_access
+
 
 class UnloadCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @commands.slash_command(name="unload_cog", description="Загрузить ког")
+    @commands.slash_command(name="unload_cog", description="Выгрузить ког")
     async def unload_cog(self, inter: disnake.ApplicationCommandInteraction, cog_name: str = commands.Param(description="Имя кога")):
-        if not any(role.id == TRUST_ROLE_ID for role in inter.author.roles):
-            await inter.response.send_message("У вас нет доступа к этой команде.", ephemeral=True)
+        if not await check_trust_access(inter):
             return
 
         await inter.response.defer(ephemeral=True)
 
+        lang_data = get_lang_data().get("cogs_control", {})
         try:
             self.bot.unload_extension(cog_name)
-            await inter.followup.send(f"Ког `{cog_name}` выгружен", ephemeral=True)
+            await inter.followup.send(lang_data.get("unload").format(cog_name=cog_name), ephemeral=True)
         except commands.ExtensionNotLoaded:
-            await inter.followup.send(f"Ког `{cog_name}` не был загружен", ephemeral=True)
+            await inter.followup.send(lang_data.get("not_loaded").format(cog_name=cog_name), ephemeral=True)
         except Exception as e:
-            await inter.followup.send(f"Ошибка при загрузке: {str(e)}", ephemeral=True)
+            await inter.followup.send(lang_data.get("error").format(error=str(e)), ephemeral=True)
 
 def setup(bot):
     bot.add_cog(UnloadCog(bot))

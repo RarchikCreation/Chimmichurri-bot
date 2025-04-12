@@ -1,11 +1,31 @@
 {
-    "channel_update": "Channel Update",
-    "user": "User",
-    "user_id": "User ID",
-    "user_roles": "User Roles",
-    "channel": "Channel",
-    "channel_id": "Channel ID",
-    "changes": "Changes",
-    "no_roles": "No roles",
-    "other_changes": "Other changes"
+    "channel_update": {
+        "title": "Channel Update",
+        "user": "User",
+        "user_id": "User ID",
+        "user_roles": "User Roles",
+        "channel": "Channel",
+        "channel_id": "Channel ID",
+        "changes": "Changes",
+        "no_roles": "No roles",
+        "other_changes": "Other changes"
+    },
+    "access": {
+        "desc": "You do not have access to this command."
+    },
+    "cogs_control": {
+        "load": "Cog `{cog_name}` has been loaded",
+        "already_loaded": "Cog `{cog_name}` is already loaded",
+        "not_found": "Cog `{cog_name}` not found",
+        "error": "Error while loading: {error}",
+        "unload": "Cog `{cog_name}` has been unloaded",
+        "not_loaded": "Cog `{cog_name}` was not loaded",
+        "reload_result": "**Cog reload result:**\n",
+        "success_loaded": "Successfully loaded: {count}\n",
+        "failed_loaded": "Failed to load: {count}\n"
+    },
+    "lang_setup": {
+        "languages": "Available languages: ru, eng",
+        "changed": "Язык изменён на {lang}"
+    }
 }
