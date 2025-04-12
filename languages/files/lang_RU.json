@@ -1,11 +1,31 @@
 {
-    "channel_update": "Изменение канала",
-    "user": "Пользователь",
-    "user_id": "ID пользователя",
-    "user_roles": "Роли пользователя",
-    "channel": "Канал",
-    "channel_id": "ID канала",
-    "changes": "Изменения",
-    "no_roles": "Нет ролей",
-    "other_changes": "Другие изменения"
+    "channel_update": {
+        "title": "Изменение канала",
+        "user": "Пользователь",
+        "user_id": "ID пользователя",
+        "user_roles": "Роли пользователя",
+        "channel": "Канал",
+        "channel_id": "ID канала",
+        "changes": "Изменения",
+        "no_roles": "Нет ролей",
+        "other_changes": "Другие изменения"
+    },
+    "access": {
+        "desc": "У вас нет доступа к этой команде."
+    },
+    "cogs_control": {
+        "load": "Ког `{cog_name}` загружен",
+        "already_loaded": "Ког `{cog_name}` уже загружен",
+        "not_found": "Ког `{cog_name}` не найден",
+        "error": "Ошибка при загрузке: {error}",
+        "unload": "Ког `{cog_name}` выгружен",
+        "not_loaded": "Ког `{cog_name}` не был загружен",
+        "reload_result": "**Результат перезагрузки когов:**\n",
+        "success_loaded": "Успешно загружено: {count}\n",
+        "failed_loaded": "Ошибки при загрузке: {count}\n"
+    },
+    "lang_setup": {
+        "languages": "Доступные языки: ru, eng",
+        "changed": "Language changed to {lang}"
+    }
 }
