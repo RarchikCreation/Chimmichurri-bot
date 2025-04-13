@@ -5,7 +5,6 @@ from languages.logic.attribute import get_lang_data
 from languages.logic.lang_loader import languages, save_global_language
 from utils.role_check_util import check_trust_access
 
-
 class LanguageCog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
