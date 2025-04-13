@@ -10,6 +10,39 @@
         "no_roles": "No roles",
         "other_changes": "Other changes"
     },
+    "channel_delete": {
+        "title": "Channel Delete",
+        "user": "User",
+        "user_id": "User ID",
+        "user_roles": "User Roles",
+        "channel": "Channel",
+        "channel_id": "Channel ID",
+        "changes": "Changes",
+        "no_roles": "No roles"
+    },
+    "channel_create": {
+        "title": "Channel Create",
+        "user": "User",
+        "user_id": "User ID",
+        "user_roles": "User Roles",
+        "channel": "Channel",
+        "channel_id": "Channel ID",
+        "changes": "Changes",
+        "no_roles": "No roles"
+    },
+    "member_update": {
+        "title": "Change Member",
+        "user": "User",
+        "user_id": "User ID",
+        "user_roles": "User Roles",
+        "member": "Member",
+        "member_id": "Member ID",
+        "no_roles": "No roles",
+        "nickname_changed": "Nickname changed",
+        "roles_changed": "Roles changed",
+        "was": "Was",
+        "now": "Now"
+    },
     "access": {
         "desc": "You do not have access to this command."
     },
