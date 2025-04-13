@@ -10,6 +10,38 @@
         "no_roles": "Нет ролей",
         "other_changes": "Другие изменения"
     },
+    "channel_delete": {
+        "title": "Удаление канала",
+        "user": "Пользователь",
+        "user_id": "ID пользователя",
+        "user_roles": "Роли пользователя",
+        "channel": "Канал",
+        "channel_id": "ID канала",
+        "changes": "Изменения",
+        "no_roles": "Нет ролей"
+    },
+    "channel_create": {
+        "title": "Создание канала",
+        "user": "Пользователь",
+        "user_id": "ID пользователя",
+        "user_roles": "Роли пользователя",
+        "channel": "Канал",
+        "channel_id": "ID канала",
+        "no_roles": "Нет ролей"
+    },
+    "member_update": {
+        "title": "Изменение участника",
+        "user": "Пользователь",
+        "user_id": "ID пользователя",
+        "user_roles": "Роли пользователя",
+        "member": "Участник",
+        "member_id": "ID участника",
+        "no_roles": "Нет ролей",
+        "nickname_changed": "Никнейм изменён",
+        "roles_changed": "Роли изменены",
+        "was": "Было",
+        "now": "Стало"
+    },
     "access": {
         "desc": "У вас нет доступа к этой команде."
     },
