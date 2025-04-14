@@ -43,6 +43,33 @@
         "was": "Was",
         "now": "Now"
     },
+    "member_kick": {
+        "title": "Kick Member",
+        "user": "User",
+        "user_id": "User ID",
+        "roles": "User Roles",
+        "member": "Member",
+        "member_id": "Member ID",
+        "no_roles": "No roles"
+    },
+    "member_ban": {
+        "title": "Ban Member",
+        "user": "User",
+        "user_id": "User ID",
+        "roles": "User Roles",
+        "member": "Member",
+        "member_id": "Member ID",
+        "no_roles": "No roles"
+    },
+    "member_unban": {
+        "title": "Unban Member",
+        "user": "User",
+        "user_id": "User ID",
+        "roles": "User Roles",
+        "member": "Member",
+        "member_id": "Member ID",
+        "no_roles": "No roles"
+    },
     "access": {
         "desc": "You do not have access to this command."
     },
