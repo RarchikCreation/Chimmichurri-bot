@@ -11,6 +11,7 @@ intents = disnake.Intents(
     members=True,
     message_content=True,
     voice_states=True,
+    bans=True
 )
 
 bot = commands.InteractionBot(intents=intents)
