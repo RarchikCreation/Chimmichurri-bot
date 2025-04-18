@@ -14,7 +14,8 @@ class LanguageCog(commands.Cog):
         if not await check_trust_access(inter):
             return
 
-        lang_data = get_lang_data().get("lang_setup", {})
+        lang_data = get_lang_data()
+        lang_data = (((lang_data.get("commands") or {}).get("lang") or {}).get("lang_setup") or {})
 
         if lang.lower() not in languages:
             await inter.response.send_message(lang_data.get("languages"), ephemeral=True)

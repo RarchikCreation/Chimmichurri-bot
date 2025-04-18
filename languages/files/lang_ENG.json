@@ -84,8 +84,17 @@
         "success_loaded": "Successfully loaded: {count}\n",
         "failed_loaded": "Failed to load: {count}\n"
     },
-    "lang_setup": {
-        "languages": "Available languages: ru, eng",
-        "changed": "Язык изменён на {lang}"
+    "commands": {
+        "audit": {
+            "select_audit_channel": {
+                 "changed": "Log channel set to: {channel}"
+            }
+        },
+        "lang": {
+            "lang_setup": {
+                "languages": "Available languages: ru, eng",
+                "changed": "Язык изменён на {lang}"
+            }
+        }
     }
 }

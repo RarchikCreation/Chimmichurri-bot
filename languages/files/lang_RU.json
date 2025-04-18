@@ -69,27 +69,6 @@
         "member_id": "ID участника",
         "no_roles": "Нет ролей"
     },
-    "member_move": {
-        "title": "Перемещение участника",
-        "member": "Участник",
-        "member_id": "ID участника",
-        "old_channel": "Старый канал",
-        "new_channel": "Новый канал",
-        "no_channel": "Нет канала",
-        "moderator": "Модератор",
-        "moderator_id": "ID модератора",
-        "roles": "Роли модератора"
-    },
-    "member_disconnect": {
-        "title": "Отключение участника",
-        "member": "Участник",
-        "member_id": "ID участника",
-        "channel": "Канал",
-        "no_channel": "Нет канала",
-        "moderator": "Модератор",
-        "moderator_id": "ID модератора",
-        "roles": "Роли модератора"
-    },
     "access": {
         "desc": "У вас нет доступа к этой команде."
     },
@@ -104,8 +83,17 @@
         "success_loaded": "Успешно загружено: {count}\n",
         "failed_loaded": "Ошибки при загрузке: {count}\n"
     },
-    "lang_setup": {
-        "languages": "Доступные языки: ru, eng",
-        "changed": "Language changed to {lang}"
+    "commands": {
+        "audit": {
+            "select_audit_channel": {
+                "changed": "Канал логов установлен на: {channel}"
+            }
+        },
+        "lang": {
+             "lang_setup": {
+                "languages": "Доступные языки: ru, eng",
+                "changed": "Language changed to {lang}"
+            }
+        }
     }
 }
