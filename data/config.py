@@ -1,6 +1,6 @@
+import json
 import os
 from typing import Optional
-
 from dotenv import load_dotenv
 
 load_dotenv("data/.env")
@@ -17,13 +17,21 @@ if trust_role_id_str is not None:
     except ValueError:
         raise ValueError("TRUSTED_ROLE_ID должен быть числом")
 
-log_channel_id_str = os.getenv("LOG_CHANNEL_ID")
-log_channel_id: Optional[int] = None
-if log_channel_id_str is not None:
-    try:
-        log_channel_id = int(log_channel_id_str)
-    except ValueError:
-        raise ValueError("LOG_CHANNEL_ID должен быть числом")
+LOG_CHANNEL_PATH = "data/log_channel.json"
 
+def load_log_channel_id() -> Optional[int]:
+    try:
+        with open(LOG_CHANNEL_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return int(data.get("log_channel_id"))
+    except (FileNotFoundError, json.JSONDecodeError, ValueError):
+        return None
+
+def save_log_channel_id(channel_id: int):
+    os.makedirs(os.path.dirname(LOG_CHANNEL_PATH), exist_ok=True)
+    with open(LOG_CHANNEL_PATH, "w", encoding="utf-8") as f:
+        json.dump({"log_channel_id": channel_id}, f)
+
+log_channel_id: Optional[int] = load_log_channel_id()
 
 GLOBAL_LANG_FILE = "data/global_language.json"
