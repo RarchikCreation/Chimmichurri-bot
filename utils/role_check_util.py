@@ -3,7 +3,6 @@ from disnake import ApplicationCommandInteraction
 from data.config import TRUST_ROLE_ID
 from languages.logic.attribute import get_lang_data
 
-
 def has_trust_role(member: disnake.Member) -> bool:
     return any(role.id == TRUST_ROLE_ID for role in member.roles)
 
